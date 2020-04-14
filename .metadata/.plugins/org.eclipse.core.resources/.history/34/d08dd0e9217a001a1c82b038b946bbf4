@@ -1,0 +1,36 @@
+package chap09;
+
+import javax.xml.soap.Node;
+
+public class MyLinkedList {
+	
+	private Node head;
+	private int size;
+	
+	public MyLinkedList() {
+		head = null;
+		size = 0;
+	}
+	/*
+	 * 특정 인덱스에 새로운 노드를 추가한다.
+	 * @param index
+	 * @param newNode
+	 * 
+	 */
+	public void add(int index, Node newNode) {
+		//첫번째 노드인 경우
+		Node nextNode = null;
+		if(index == 0) {
+			if(this.head == null) {
+				this.head = new Node();
+				this.head.setNext(newNode);
+			}else {
+				nextNode = this.head.getNext();
+				newNode.setNext(nextNode);
+				this.head.setNext(newNode);
+			}
+		}
+		
+	}
+
+}
